@@ -2,6 +2,7 @@ name: webdrain
 
 services:
   ${name}-redis: redis
+  ${name}-tcp: harbor
 
 ignores:
   - .git

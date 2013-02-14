@@ -8,6 +8,8 @@
       console.log(data);
       $('<div style="display: none;"></div>'
         ).text(data).appendTo('div#messages').fadeIn("slow");
+      // scroll to the bottom of messages div
+      $('div#messages').scrollTop($('div#messages')[0].scrollHeight);
     });
   </script>
 </head>
@@ -15,6 +17,6 @@
 <body>
   <h1>Web Drain</h1>
   <hr />
-  <div id="messages">
+  <div id="messages" style="font-family: monospace, courier; height:90%;overflow: auto;">
   </div>
 </body>
