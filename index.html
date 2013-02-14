@@ -2,6 +2,8 @@
   <title>Web Drain</title>
   <script src="/socket.io/socket.io.js"></script>
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
   <script>
     var socket = io.connect('http://' + window.location.host);
     socket.on('messages', function (data) {
@@ -12,11 +14,29 @@
       $('div#messages').scrollTop($('div#messages')[0].scrollHeight);
     });
   </script>
+  <style type="text/css">
+    div#messages {
+      margin: 1em;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Web Drain</h1>
-  <hr />
-  <div id="messages" style="font-family: monospace, courier; height:90%;overflow: auto;">
+  <div class="container">
+    <a href="https://github.com/ActiveState/webdrain">
+      <img style="position: absolute; top: 0; left: 0; border: 0;"
+           src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"
+           alt="Fork me on GitHub"></a>
+
+    <h1>Web Drain</h1>
+
+    <div id="messages" style="font-family: monospace, courier;
+                              height:80%; overflow: auto;">
+    </div>
+
+    <footer>
+      <p>&copy; ActiveState 2013</p>
+    </footer>
+    
   </div>
 </body>
