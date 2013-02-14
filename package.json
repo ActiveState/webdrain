@@ -1,0 +1,28 @@
+{
+  "name": "webdrain",
+  "version": "0.1.0",
+  "description": "Logyard drain as a web app",
+  "main": "app.js",
+  "dependencies": {
+    "express": "~3.1.0",
+    "socket.io": "~0.9.13",
+    "hiredis": "",
+    "redis": "~0.8.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ActiveState/webdrain.git"
+  },
+  "keywords": [
+    "logyard",
+    "stackato"
+  ],
+  "author": "Sridhar Ratnakumar <gitub@srid.name>",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "3ec209296c2704018044d8452de92e734f4ac042"
+}

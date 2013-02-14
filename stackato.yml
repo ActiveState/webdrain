@@ -1,0 +1,8 @@
+name: webdrain
+
+services:
+  ${name}-redis: redis
+
+ignores:
+  - .git
+  - node_modules
