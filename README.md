@@ -1,21 +1,10 @@
 webdrain
 ========
 
-Logyard drain as a web app.
+This web app runs two services:
 
-```
-$ stackato push -n
-...
-$ stackato service webdrain-tcp
-...
-```
+  * TCP service, via Harbor, acting as a Drain
+  * Web service, exposing via websockets the contents received on the Drain
 
-Note down the port from that last command. And then setup a drain
-like:
-
-```
-$ kato log drain add webdrain tcp://stackato-xyza.local:12345/
-```
-
-Watch the log messages come in.
-
+The TCP port number will be published on the web app. You can also run
+`stackato service webdrain-tcp` to retrieve it.

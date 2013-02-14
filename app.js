@@ -21,6 +21,14 @@ function newRedisClient() {
   return redisCli;
 }
 
+function externalPort() {
+  if (process.env.STACKATO_SERVICES) {
+    return JSON.parse(process.env.STACKATO_SERVICES)["webdrain-tcp"]["port"]
+  } else {
+    return TCP_PORT
+  }
+}
+
 var redisMain = newRedisClient();
 
 server.listen(PORT)
@@ -31,7 +39,7 @@ app.get('/', function (req, res) {
 
 io.sockets.on('connection', function (socket) {
   console.log("redis: init")
-  cmd = "kato log drain add webdrain tcp://<this-domain>:" + TCP_PORT
+  cmd = "kato log drain add webdrain tcp://<this-domain>:" + externalPort()
   socket.emit('messages', "Run: " + cmd)
   var redisConn = newRedisClient();
   redisConn.on("message", function(channel, message) {
