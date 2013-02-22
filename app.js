@@ -39,7 +39,7 @@ app.get('/', function (req, res) {
 
 io.sockets.on('connection', function (socket) {
   console.log("redis: init")
-  cmd = "kato log drain add webdrain tcp://<this-domain>:" + externalPort()
+  cmd = "kato log drain add webdrain tcp://ports.<this-domain>:" + externalPort()
   socket.emit('messages', "Run: " + cmd)
   var redisConn = newRedisClient();
   redisConn.on("message", function(channel, message) {
